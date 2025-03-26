@@ -1,15 +1,17 @@
-require ('dotenv').config();
-const {Pool, Connection}=require("pg");
-const pool=new Pool({
-    connectionString:'postgresql://postgres:Legal@123Legal@db.legal.supabase.co:5432/postgres',
-    ssl:{rejectUnauthorized:false}
-})
+require('dotenv').config();
+const { Pool } = require("pg");
+
+const pool = new Pool({
+    connectionString: 'postgresql://postgres:Legal%40123Legal@db.legal.supabase.co:5432/postgres',
+    ssl: { rejectUnauthorized: false }
+});
+
 pool.connect()
-.then(()=>
-{
-    console.log("connected to database")
-})
-.catch((err)=>{
-    console.log("database connection error",err)
-})
-module.exports=pool
+    .then(() => {
+        console.log("Connected to database");
+    })
+    .catch((err) => {
+        console.log("Database connection error", err);
+    });
+
+module.exports = pool;
