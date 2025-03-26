@@ -4,7 +4,7 @@ const pool1=new Pool({
     ConnectionString:process.env.database_url,
     ssl:{rejectUnauthorized:false}
 })
-pool.connect()
+pool1.connect()
 .then(()=>
 {
     console.log("connected to database")
