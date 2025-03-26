@@ -7,6 +7,7 @@ router.get('/user',(req,res)=>{
 
 router.post('/store', async (req, res) => {
     try {
+        console.log("req.body",req.body)
         const { name, contact, location, caseType, answers } = req.body;
 
         // Convert "yes" or "no" answers to Boolean (true/false)
